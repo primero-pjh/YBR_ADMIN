@@ -1,0 +1,26 @@
+/* padding */
+.pd5 { padding: 5px; }
+.pd10 { padding: 10px; }
+.pd15 { padding: 15px; }
+.pd20 { padding: 20px; }
+
+/* font */
+.ft12 {font-size: 12px;}
+.ft14 {font-size: 14px;}
+.ft20 {font-size: 20px;}
+
+/* margin */
+.mt5 {margin-top: 5px;}
+
+/* background-color */
+.bg-white {background-color: white;}
+.bg-default {background-color: white;}
+
+/* width */
+.w90p{width:90%;}
+
+/* flex */
+.flex {
+  display: flex;
+  align-items: center;
+}

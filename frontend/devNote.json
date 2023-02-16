@@ -1,0 +1,51 @@
+{
+	"패치노트": {
+		"0.2.1": [
+			"> vant 프레임워크 구현",
+			"> vue 프레임워크  구현",
+			"> vue-router 구현",
+			"> vuex 구현",
+			"> socket io, socket io client 연동 완료",
+			"> jwt login 구현",
+			"> socket middle ware -> jwt 자동 검사",
+			"> socket io auth -> handshake 에 jwt 삽입",
+			"> err_code 정의",
+			"> knex + mysql 연동 완료",
+			"> i18n 기능 부착",
+			"> cfg 정의",
+			"> 각종 환경설정 완료"
+		],
+		"0.2.2": [
+			"> 커플등록 기능 구현",
+			"> nginx 등록 : ybr.pritras.com",
+			"> letsencrypt https 등록"
+		],
+		"0.2.3": [
+			"> appRoot library 추가",
+			"> require dfs 함수 추가",
+			"> logout 시 store data 저장하는 과정에서 오류가 생기는 것을 해결",
+			"> logout 후 login 시 layout의 footer의 active가 제대로 설정되지 않는 오류 해결"
+		],
+		"0.2.4": [
+			"> footer에서 i18n이 변경되지 않는 오류 해결",
+			"> env 환경변수 세팅 [dev, real] 완료",
+			"> vant calendar -> 내가 생각한 UI가 아님",
+			"> vue calendar library 도입완료",
+			"> admin(관리자) 페이지 작업중",
+			"> admin의 강제종료 기능 추가",
+			"> login logic 변경 작업중"
+		],
+		"0.2.5": [
+			"> admin user page 작업중",
+			"> www/user_dict key에 userName 추가",
+			"> admin user page 1차 개발 완료(search, list up)",
+			"> admin user page 완료 예정"
+		],
+		"0.3.1": [
+			"ybr_admin directory 분리",
+			"admin clients 페이지 작업",
+			"admin rooms 페이지 작업",
+			"admin logs 페이지 작업"
+		]
+	}
+}
