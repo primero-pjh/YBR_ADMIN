@@ -31,27 +31,23 @@
                     </van-divider>
                     <div v-for="(row, idx) in url_list" :key="idx">
                         <div @click="onChange(row)">
-                            <template v-if="row.isActive">
-                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+                                <div>
                                     <div>
-                                        {{row.label}}
-                                    </div>
-                                    <div>
-                                        <van-icon name="success" />
+                                        <van-icon :name="row.icon" />
+                                        <span class="pl-md">{{row.label}}</span>
                                     </div>
                                 </div>
-                            </template>
-                            <template v-else>
-                                <div style="padding: 10px;">
-                                    {{row.label}}
+                                <div v-if="row.isActive">
+                                    <van-icon name="success" />
                                 </div>
-                            </template>
+                            </div>
                             <van-divider :style="{ borderColor: '#aaa', padding: '0px',  margin: '0px'}" />
                         </div>
                     </div>
                 </div>
                 <div>
-                    <van-button @click="onLogout" style="width: 100%;">
+                    <van-button @click="onLogout" plain type="primary" style="width: 100%;" class="pa-md">
                         로그아웃
                     </van-button>
                 </div>
@@ -75,10 +71,10 @@ export default {
                 Waiting: true,
             },
             url_list: [
-                { icon: '', label: 'Clients', url: '/admin/clients', name: 'adminClients', isActive: false },
-                { icon: '', label: 'Rooms', url: '/admin/rooms', name: 'adminRooms', isActive: false },
-                { icon: '', label: 'Logs', url: '/admin/logs', name: 'adminLogs', isActive: false },
-                { icon: '', label: 'Statistics', url: '/admin/statistics', name: 'adminStatistics', isActive: false },
+                { icon: 'friends-o', label: 'Clients', url: '/admin/clients', name: 'adminClients', isActive: false },
+                { icon: 'circle', label: 'Rooms', url: '/admin/rooms', name: 'adminRooms', isActive: false },
+                { icon: 'notes-o', label: 'Logs', url: '/admin/logs', name: 'adminLogs', isActive: false },
+                { icon: 'chart-trending-o', label: 'Statistics', url: '/admin/statistics', name: 'adminStatistics', isActive: false },
                 // { icon: 'user-o', label: 'Dashboard', url: '/admin/dashboard', name: 'AdminDashboard', isActive: false },
             ],
         }
@@ -98,6 +94,7 @@ export default {
 
         onLogout: function() {
             let vm = this;
+            vm.showLeft = false;
             vm.$store.commit("setUser", null);
             vm.$store.commit("setCouple", null);
             vm.$store.commit("setToken", "");

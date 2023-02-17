@@ -4,6 +4,22 @@
 .pd15 { padding: 15px; }
 .pd20 { padding: 20px; }
 
+.pa-sm { padding: 8px; }
+.pa-md { padding: 16px; }
+.pa-lg { padding: 24px; }
+.pl-sm { padding-left: 8px; }
+.pl-md { padding-left: 16px; }
+.pl-lg { padding-left: 24px; }
+.pr-sm { padding-right: 8px; }
+.pr-md { padding-right: 16px; }
+.pr-lg { padding-right: 24px; }
+.pt-sm { padding-top: 8px; }
+.pt-md { padding-top: 16px; }
+.pt-lg { padding-top: 24px; }
+.pb-sm { padding-bottom: 8px; }
+.pb-md { padding-bottom: 16px; }
+.pb-lg { padding-bottom: 24px; }
+
 /* font */
 .ft12 {font-size: 12px;}
 .ft14 {font-size: 14px;}

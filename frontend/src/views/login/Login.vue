@@ -103,7 +103,6 @@ export default {
                     vm.setSocket(data.token, function() {
                         vm.$router.push('/admin/clients');
                     });
-                    
                 } else {
                     vm.$store.state.axiosError(data);
                 }
@@ -116,7 +115,10 @@ export default {
         setSocket: function(token, callback) {
             let vm = this;
             let socket = io(`${process.env.VUE_APP_HOST}`, {
-                auth: { token: `Bearer ${token}` },
+                auth: { 
+                    token: `Bearer ${token}`,
+                    UID: vm.$store.state.user.UID,
+                },
             });
             socket.on("connection", (socket_id) => {
                 vm.$store.commit("setSocketId", socket_id);

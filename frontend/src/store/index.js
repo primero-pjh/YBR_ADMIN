@@ -8,6 +8,7 @@ const store = createStore({
         token: null,
 
         user: {
+            UID: '',
             userId: '',
             userName: '',
             phoneNumber: '',
@@ -67,6 +68,7 @@ const store = createStore({
         /* user function */
         setUser(state, user) {
             if(!user) {
+                state.user.UID = "";
                 state.user.userId = "";
                 state.user.userName = "";
                 state.user.image = "";
@@ -74,6 +76,7 @@ const store = createStore({
                 state.user.spousePhoneNumber = "";
                 state.user.isAdmin = "";
             } else {
+                state.user.UID = user.UID;
                 state.user.userId = user.userId;
                 state.user.userName = user.userName;
                 state.user.image = user.image;
