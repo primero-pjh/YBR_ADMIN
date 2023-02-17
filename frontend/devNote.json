@@ -45,7 +45,8 @@
 			"ybr_admin directory 분리",
 			"admin clients 페이지 작업",
 			"admin rooms 페이지 작업",
-			"admin logs 페이지 작업"
+			"admin logs 페이지 작업",
+			"admin login 작업"
 		]
 	}
 }
