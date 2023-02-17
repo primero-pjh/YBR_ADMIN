@@ -89,7 +89,7 @@ export default {
         onLogin: function() {
             let vm = this;
             vm.isLoading = true;
-            axios.get(`/api/admin/login`, {
+            axios.get(`${process.env.VUE_APP_HOST}/api/admin/login`, {
                 params: {
                     userId: vm.appUser.userId,
                     password: vm.appUser.password,

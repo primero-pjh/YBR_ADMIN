@@ -6,16 +6,10 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const app = express();
 const cors = require('cors');
-let user_dict = new Object();
 /* view engine setup */
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-/* middle ware */
-app.all('/*', function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With"); next();
-});
 /* static variable */
 app.use(logger('dev'));
 app.use(express.json());
@@ -26,8 +20,6 @@ app.use(cors());
 
 /* router */
 app.use('/', require('./routes/index'));
-app.use('/', require('./routes/api/user/login'));
-app.use('/', require('./routes/api/user/check'));
 
 
 // catch 404 and forward to error handler
@@ -46,7 +38,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = {
-  app,
-  user_dict,
-};
+module.exports = app;
