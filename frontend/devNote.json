@@ -45,8 +45,11 @@
 			"ybr_admin directory 분리",
 			"admin clients 페이지 작업",
 			"admin rooms 페이지 작업",
-			"admin logs 페이지 작업",
+			"admin logs 페이지 작업 완료",
 			"admin login 작업"
+		],
+		"0.3.2": [
+		
 		]
 	}
 }

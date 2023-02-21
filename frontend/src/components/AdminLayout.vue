@@ -18,12 +18,13 @@
             position="left" :style="{ width: '50%', height: '100%' }">
             <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
                 <div>
-                    <div style="padding: 20px;">
+                    <div style="display: flex; align-items: center;" class="pa-md">
                         <div>
                             <van-image src="/images/doge_v3.png" style="width: 50px; height: 50px;" />
                         </div>
-                        <div >
-                            <span style="font-size: 14px;">{{ $store.state.user.userName }}님 안녕하세요.</span>
+                        <div class="pl-md">
+                            <div style="font-size: 14px;" class="text-bold">{{ $store.state.user.userName }}님</div>
+                            <div style="font-size: 12px;">안녕하세요.</div>
                         </div>
                     </div>
                     <van-divider dashed :style="{ borderColor: '#aaa', padding: '0px',  margin: '0px'}" >
@@ -46,7 +47,7 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class="pa-md">
                     <van-button @click="onLogout" plain type="primary" style="width: 100%;" class="pa-md">
                         로그아웃
                     </van-button>
@@ -74,7 +75,7 @@ export default {
                 { icon: 'friends-o', label: 'Clients', url: '/admin/clients', name: 'adminClients', isActive: false },
                 { icon: 'circle', label: 'Rooms', url: '/admin/rooms', name: 'adminRooms', isActive: false },
                 { icon: 'notes-o', label: 'Logs', url: '/admin/logs', name: 'adminLogs', isActive: false },
-                { icon: 'chart-trending-o', label: 'Statistics', url: '/admin/statistics', name: 'adminStatistics', isActive: false },
+                // { icon: 'chart-trending-o', label: 'Statistics', url: '/admin/statistics', name: 'adminStatistics', isActive: false },
                 // { icon: 'user-o', label: 'Dashboard', url: '/admin/dashboard', name: 'AdminDashboard', isActive: false },
             ],
         }

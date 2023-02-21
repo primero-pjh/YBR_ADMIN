@@ -1,16 +1,15 @@
 <template>
     <div id="adminRoomsVue" style="height: 100%;">
         <div style="display: flex; flex-direction: column; height: 100%; background-color: #eee;">
-            <template v-for="(log, idx) in log_list" :key="idx">
-                <div class="bg-white pd10"
-                    style="display: flex; align-items: center; height: 60px;
-                        justify-content: space-between;" >
-                    <div>
-                        <span class="ft-md">{{ log.title }}</span>
-                    </div>
-                </div>
-                <van-divider :style="{ borderColor: '#aaa', padding: '0px',  margin: '0px'}" />
-            </template>
+            <van-list
+                v-model:loading="loading"
+                :finished="finished"
+                finished-text="Finished"
+                @load="onLoad" >
+                <van-cell v-for="(item, idx) in log_list" :key="idx" :title="item.event">
+                    <div>{{item.dateAdded.substr(0,10)}}</div>
+                </van-cell>
+            </van-list>
         </div>
     </div>
 </template>
@@ -21,10 +20,15 @@ export default {
     name: 'adminRoomsVue',
     data() {
         return {
+            loading: true,
+            finished: true,
             log_list: [],
         }
     },
     methods: {
+        onLoad: function() {
+            let vm = this;
+        },
         shutdown: function(key) {
             let vm = this;
             vm.socket.emit(`/socket/admin/shutdown`, {
@@ -45,6 +49,14 @@ export default {
         },
         load_log_list: function() {
             let vm = this;
+            vm.socket.emit(`/socket/admin/logs`, {
+
+            }, (data, err) => {
+                if(data.success) {
+                    let row = data.log_list;
+                    vm.log_list = row;
+                }
+            });
         },  
     },
     mounted: function() {
@@ -53,7 +65,6 @@ export default {
             vm.$router.push('/login');
         }
         vm.socket = vm.$store.state.socket;
-
         vm.load_log_list();
     },
 }
