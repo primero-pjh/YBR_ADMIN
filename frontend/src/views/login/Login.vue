@@ -95,7 +95,7 @@ export default {
                     password: vm.appUser.password,
                     rememberMe: (vm.appUser.rememberMe) ? 1 : 0,
                 }
-            }).then(function(res) {
+            }).then((res) => {
                 let data = res.data;
                 if(data.success) {
                     vm.$store.commit("setUser", data.user);

@@ -75,6 +75,7 @@ export default {
                 { icon: 'friends-o', label: 'Clients', url: '/admin/clients', name: 'adminClients', isActive: false },
                 { icon: 'circle', label: 'Rooms', url: '/admin/rooms', name: 'adminRooms', isActive: false },
                 { icon: 'notes-o', label: 'Logs', url: '/admin/logs', name: 'adminLogs', isActive: false },
+                { icon: 'todo-list-o', label: 'redis', url: '/admin/redis', name: 'adminRedis', isActive: false },
                 // { icon: 'chart-trending-o', label: 'Statistics', url: '/admin/statistics', name: 'adminStatistics', isActive: false },
                 // { icon: 'user-o', label: 'Dashboard', url: '/admin/dashboard', name: 'AdminDashboard', isActive: false },
             ],
