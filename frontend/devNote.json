@@ -49,7 +49,7 @@
 			"admin login 작업"
 		],
 		"0.3.2": [
-		
+			"> admin redis datasets 조회 화면"
 		]
 	}
 }
