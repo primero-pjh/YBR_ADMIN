@@ -1,7 +1,21 @@
 <template>
     <div id="adminRedisVue" style="height: 100%;">
         <div style="display: flex; flex-direction: column; height: 100%; background-color: #eee;">
-            
+            <template v-for="(key, idx) in redis" :key="idx">
+                <div class="bg-white pd10"
+                    style="display: flex; align-items: center; height: 60px;
+                        justify-content: space-between;" >
+                    <div>
+                        <span class="ft-md">{{ key }}</span>
+                    </div>
+                    <div>
+                    </div>
+                    <div>
+                        <van-button plain type="default" size="small">상세</van-button>
+                    </div>
+                </div>
+                <van-divider :style="{ borderColor: '#aaa', padding: '0px',  margin: '0px'}" />
+            </template>
         </div>
     </div>
 </template>
@@ -16,6 +30,8 @@ export default {
     data() {
         return {
             socket: null,
+
+            redis: [],
         }
     },
     methods: {
@@ -23,7 +39,10 @@ export default {
             let vm = this;
             axios.get(`${process.env.VUE_APP_HOST}/api/admin/redis`, {}).then((res) => {
                 let data = res.data;
-                console.log("data:", data);
+                if(data.success) {
+                    let row = data.redis;
+                    vm.redis = row;
+                }
             });
             
             console.log("load_redis");
